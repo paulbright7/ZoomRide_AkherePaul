@@ -24,7 +24,7 @@ This project analyzes a company called ZoomRide, a fictional in-city trnasport c
 - Then i procced to clean the data by checking for duplicates, standardizing the city names and removing extra space
 - There are some completed trip with missing fare about 9 of them which i noticed from the data
 - Then i went ahead to peform EDA on the data.
-Honestly if i didn`t trim the data i would have had issues in counting total trip by each city
+
 ## 😎SQL Querry Review
 ![ZoomRide_AkherePaul](ZoomRide_AkherePaul_SQL_Project.sql)
 ---
@@ -41,7 +41,7 @@ Honestly if i didn`t trim the data i would have had issues in counting total tri
 - README.md
 ## 📍Conclusion / Manager`s Message
 ---
-From the insight gotten above, we can see that Lagos had a 93 completed trips and generated 218,890 in Revenue. i will advice we invest more in Lagos city. The city name were wrongly spelled, if i didn`t correct that i won`t have had an accurate result. One thing i will like to know is, If ZoomRide is considering to go into inter-city transportation
+From the insight gotten above, we can see that Lagos had a 93 completed trips and generated 218,890 in Revenue. i will advice we invest more in Lagos city. The city name were wrongly spelled, if i didn`t correct the data i won`t have had an accurate result. One thing i will like to know is, If ZoomRide is considering to go into inter-city transportation
   
 
 
