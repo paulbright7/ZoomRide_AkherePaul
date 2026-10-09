@@ -41,7 +41,7 @@ This project analyzes a company called ZoomRide, a fictional in-city trnasport c
 - README.md
 ## 📍Conclusion / Manager`s Message
 ---
-From the insight gotten above, we can see that Lagos had a 93 completed trips and generated 218,890 in Revenue. i will advice we invest more in Lagos city. The city name were wrongly spelled, if i didn`t correct the data i won`t have had an accurate result. One thing i will like to know is, If ZoomRide is considering to go into inter-city transportation
+From the insight gotten above, we can see that Lagos had a 93 completed trips and generated 218,890 in Revenue. i will advice we invest more in Lagos city. The city name was wrongly spelled, if i didn`t correct the data i won`t have had an accurate result. One thing i will like to know is, If ZoomRide is considering to go into inter-city transportation
   
 
 
