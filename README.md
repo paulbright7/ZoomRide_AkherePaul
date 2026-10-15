@@ -32,6 +32,8 @@ This project is also part of my data analytics portfolio showcasing Exploratory 
 - DESC
 - ROUND
 - AVG
+## Project Output
+![ZoomRide_AkherePaul](PROJECTMYSQL.sql)
 
 
 
