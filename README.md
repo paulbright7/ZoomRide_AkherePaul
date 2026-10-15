@@ -48,7 +48,7 @@ This project is also part of my data analytics portfolio showcasing Exploratory 
 - [myanswers](PROJECTMYSQL.sql)
 - README.md
 ## 📍Conlusion
-
+From the insight gotten above, we can see that Laogos generated 218,890 in revenue and completed 93 trips. I will advice that the company invest more in Lagos city. When i was looking at the data i discovered two duplicated trips and wrong spelling in city, some even had extra space. If i didn`t clean the data we won`t have gotten accurate result. I will like to ask if zoomride will venture into inter-city transportation.
 
 
 
