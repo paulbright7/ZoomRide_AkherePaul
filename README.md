@@ -35,6 +35,17 @@ This project is also part of my data analytics portfolio showcasing Exploratory 
 ## Project Output
 ![ZoomRide_AkherePaul](PROJECTMYSQL.sql)
 
+## Key Insight
+- The sum of #568,470 was recorded as total revenue
+- Out of the 6 cities, Lagos genereted the most revenue (#218,890) and most completed trips (93)
+- There are 9 completed trips with missing fare
+- Out of 40 customers, 4 customers have nevered book a ride
+- December is the most demand month when it comes to booking a ride
+- Economy Vehicle generated most successful trip with 121 completed trips
+- There were two duplicated trips which i removed
+## Files in this Repository
+
+
 
 
 
