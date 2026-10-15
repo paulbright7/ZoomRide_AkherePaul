@@ -1,0 +1,120 @@
+-- MY tABLES
+SELECT * FROM customers;
+SELECT * FROM drivers;
+SELECT * FROM trips;
+
+-- let count the total rows in trips table
+
+SELECT 
+	COUNT(*) AS total_rows
+FROM trips;
+
+-- The next thing is to look for duplicate 
+SELECT
+	customer_id, driver_id, trip_date, fare, MIN(trip_id) AS Lowtrip_id, MAX(trip_id) AS Hightrip_id
+FROM trips
+GROUP BY customer_id, driver_id, trip_date, fare
+HAVING COUNT(*) > 1;
+
+-- Removing the duplicates
+
+DELETE 
+FROM trips
+WHERE trip_id IN (299, 300);
+
+-- Standardaizing the data(checking the spelling and removing extra space
+
+SELECT 
+	city
+FROM trips;
+
+-- we can see that there is alot of extra space and some miss spelled words
+-- let remove the extra space
+
+UPDATE 
+	trips
+SET city = TRIM(city);
+
+-- let check for uniqueness in city
+SELECT 
+	DISTINCT city
+FROM trips
+ORDER BY city;
+
+-- now we rename
+
+UPDATE 
+	trips
+SET city = 'Port Harcourt'
+WHERE city = 'PH';
+UPDATE 
+	trips
+SET city = 'Port Harcourt'
+WHERE city = 'Port-Harcourt';
+UPDATE 
+	trips
+SET city = 'Kampala'
+WHERE city = 'Kampla';
+UPDATE 
+	trips
+SET city = 'Nairobi'
+WHERE city = 'Nairobbi';
+
+-- let check for missing fare for completed trip
+
+SELECT 
+	trip_id, city, trip_date, fare, status 
+FROM trips
+WHERE status = 'completed' AND fare IS NULL;
+-- there are nine missing fare. who could have done this
+
+-- Our data is now cleaned and the null seen. it`s time to perform EDA
+-- let see the city that generate most revenue
+
+SELECT 
+	city, SUM(fare) AS Revenue, ROUND(AVG(fare), 2) AS Normal_fare_price
+FROM trips
+GROUP BY city
+ORDER BY Revenue DESC;
+
+-- let see how much was made each month of the year
+
+SELECT 
+	DATE_FORMAT(trip_date, '%Y-%m'), SUM(fare) AS Revenue,
+		status, COUNT(*) AS Number_of_trips
+FROM trips
+WHERE status = 'completed'
+GROUP BY Status, DATE_FORMAT(trip_date, '%Y-%m');
+
+-- let see how much was made by each vehicle type
+
+SELECT 
+	d.vehicle_type, SUM(t.fare) AS Revenue, 
+		COUNT(*) AS Number_Of_trips
+FROM trips t
+INNER JOIN drivers d ON
+			t.driver_id = d.driver_id
+WHERE t.status = 'completed'
+GROUP BY d.vehicle_type
+ORDER BY Revenue DESC;
+
+-- Let see customer who never booked a ride before
+
+SELECT 
+	c.customer_name AS customer_who_never_booked, c.customer_id
+FROM customers c
+	LEFT JOIN trips t ON
+    c.customer_id = t.customer_id
+WHERE t.customer_id IS NULL;
+
+-- Let see Customer who spend more on trips
+
+SELECT 
+	c.customer_name AS CustomerName, SUM(t.fare) AS TotalSpend, COUNT(*) AS Number_of_trips
+FROM trips t
+	INNER JOIN customers c ON
+    t.customer_id = c.customer_id
+WHERE t.status = 'completed'
+GROUP BY c.customer_name
+ORDER BY TotalSpend DESC
+LIMIT 3;
